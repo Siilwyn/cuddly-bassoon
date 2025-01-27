@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import * as query from './index.query.graphql';
+import query from "./index.query.graphql";
 </script>

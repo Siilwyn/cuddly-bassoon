@@ -2,24 +2,33 @@ import pluginGraphql from '@rollup/plugin-graphql';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
+  srcDir: 'src',
   devtools: { enabled: true },
+  components: { dirs: [] },
+
+  // Disable confusing @ alias in favor of ~ alias
+  alias: { '@': '' },
+
   routeRules: {
     '*': { prerender: false },
   },
+
+  compatibilityDate: '2024-07-26',
   nitro: {
-    preset: 'netlify',
     prerender: {
       crawlLinks: true,
     },
   },
+
   vite: {
     plugins: [pluginGraphql()],
   },
-  $development: {
-    vite: {
-      server: {
-        allowedHosts: true,
+
+  experimental: {
+    componentIslands: true,
+    defaults: {
+      nuxtLink: {
+        trailingSlash: 'append',
       },
     },
   },

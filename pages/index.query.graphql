@@ -1,5 +1,6 @@
-{
-    home {
-        title
-    }
+query HomeQuery {
+  page: home {
+    id
+    title
+  }
 }
