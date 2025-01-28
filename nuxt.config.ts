@@ -1,5 +1,3 @@
-import pluginGraphql from '@rollup/plugin-graphql';
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   srcDir: 'src',
